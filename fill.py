@@ -10,11 +10,16 @@ def ifFilled(matrix):
 def displayMatrix(matrix):
     for i in range(0, len(matrix)):
         for j in range(0, len(matrix)):
-            print(matrix[i][j], end = '')
+            print(matrix[i][j], end = ' ')
         print(' ')
     print(' ')
 
 def fill(matrix, i, j):
+    """
+    1 means filled with block
+    0 means vacant
+    2 means filled with water
+    """
     print(i, j)
     if matrix[i][j] == 0:
         matrix[i][j] = 2
@@ -54,7 +59,7 @@ for i in range(0, n):
     matrix.append([])
 for i in range(0, n):
     for j in range(0, n):
-        matrix[i].append(1)
+        matrix[i].append(random.randint(0, 1))
 displayMatrix(matrix)
 for j in range(0, n):
     if matrix[0][j] == 0:
